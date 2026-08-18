@@ -19,7 +19,7 @@ body {
             rgba(0, 0, 0, 0.82),
             rgba(0, 0, 0, 0.92)
         ),
-        url("img/algebra.jpg") center center / cover fixed;
+        url("algebra.jpg") center center / cover fixed;
     color: #ffffff;
     line-height: 1.7;
 }
