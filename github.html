@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Código-fonte do projeto VI JAPEX 2026.">
+    <title>GitHub | VI JAPEX 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay">
+    <nav>
+        <div class="logo">VI JAPEX 2026</div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modelo.html">Modelo Matemático</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="python.html">🐍 Python — Teste</a></li>
+            <li><a class="active" href="github.html">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <span class="event-tag">10 · CÓDIGO-FONTE</span>
+        <h1>Projeto no GitHub</h1>
+        <p>Consulte os arquivos utilizados na implementação da aplicação.</p>
+    </header>
+
+    <main class="container">
+        <section class="card github-card">
+            <span class="section-label">REPOSITÓRIO</span>
+            <h2>Código-fonte completo</h2>
+            <p>
+                O repositório reúne os arquivos HTML, CSS, JavaScript e Python
+                utilizados no projeto, incluindo as duas implementações do
+                modelo matricial.
+            </p>
+
+            <div class="repo-structure">
+                <pre><code>Japex_2026/
+├── index.html
+├── modelo.html
+├── calculadora.html
+├── python.html
+├── github.html
+├── style.css
+├── script.js
+├── python.js
+├── python/
+│   └── modelo.py
+└── img/
+    ├── algebra.jpg
+    └── alvenarias.jpg</code></pre>
+            </div>
+
+            <div class="github-actions">
+                <a class="link-btn" href="https://github.com/alessandraaguiarx/Japex_2026" target="_blank" rel="noopener noreferrer">
+                    Acessar repositório GitHub
+                </a>
+                <a class="link-btn secondary" href="https://github.com/alessandraaguiarx/Japex_2026/blob/main/cod.py" target="_blank" rel="noopener noreferrer">
+                    Ver código Python original
+                </a>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">ARQUITETURA</span>
+            <h2>Duas implementações</h2>
+            <div class="two-columns">
+                <div class="info-box">
+                    <h3>🟦 JavaScript</h3>
+                    <p>
+                        Executa a multiplicação matricial diretamente no navegador,
+                        sem instalação adicional.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <h3>🐍 Python + NumPy</h3>
+                    <p>
+                        Executa Python no navegador utilizando Pyodide e NumPy,
+                        permitindo testar o mesmo modelo computacional.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>VI JAPEX 2026</strong></p>
+        <p>Universidade do Estado da Bahia – UNEB</p>
+        <p>Departamento de Ciências Exatas e da Terra – DCET I</p>
+        <p class="footer-small">Salvador – BA · 2026</p>
+    </footer>
+</div>
+</body>
+</html>

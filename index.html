@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modelagem Matricial do Quantitativo de Materiais em Sistemas de Alvenaria Convencional e Estrutural - VI JAPEX 2026">
+    <title>Início | VI JAPEX 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay">
+    <nav>
+        <div class="logo">VI JAPEX 2026</div>
+        <ul>
+            <li><a class="active" href="index.html">Início</a></li>
+            <li><a href="modelo.html">Modelo Matemático</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="python.html">🐍 Python — Teste</a></li>
+            <li><a href="github.html">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="event-tag">VI JAPEX 2026</span>
+            <h1>Modelagem Matricial do Quantitativo de Materiais</h1>
+            <p class="hero-subtitle">
+                Uma aplicação da Álgebra Linear na Engenharia Civil para modelagem
+                e cálculo de quantitativos de materiais em sistemas de alvenaria
+                convencional e estrutural.
+            </p>
+            <div class="hero-buttons">
+                <a href="modelo.html" class="btn">Conheça o modelo</a>
+                <a href="calculadora.html" class="btn btn-outline">Testar calculadora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card identification">
+            <div>
+                <span class="section-label">PROJETO ACADÊMICO</span>
+                <h2>VI Jornada Acadêmica de Pesquisa e Extensão</h2>
+                <p>
+                    Trabalho desenvolvido para a VI JAPEX 2026, realizada pela
+                    Universidade do Estado da Bahia (UNEB), Departamento de
+                    Ciências Exatas e da Terra – DCET I.
+                </p>
+            </div>
+            <div class="authors">
+                <p><strong>Autores</strong><br>
+                    Alessandra Nascimento Aguiar Santos;<br>
+                    Evandro; Manuela Nascimento
+                </p>
+                <p><strong>Orientador</strong><br>Alexandre Boleira Lopo</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">01 · SOBRE O PROJETO</span>
+            <h2>Aplicação da Álgebra Linear na Engenharia Civil</h2>
+            <div class="two-columns">
+                <div>
+                    <p>
+                        O projeto demonstra a aplicação de conceitos de Álgebra
+                        Linear a um problema relacionado à Engenharia Civil:
+                        a determinação do quantitativo de materiais a partir
+                        das áreas de alvenaria convencional e estrutural.
+                    </p>
+                    <p>
+                        A proposta organiza as relações de consumo por meio de
+                        uma matriz de coeficientes e interpreta o cálculo como
+                        uma transformação linear.
+                    </p>
+                    <p>
+                        O modelo recebe um vetor de áreas e produz como saída
+                        um vetor com os quantitativos dos materiais modelados.
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img src="img/alvenarias.jpg"
+                         alt="Representação de alvenaria convencional e alvenaria estrutural"
+                         class="card-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">02 · PROBLEMA E OBJETIVOS</span>
+            <h2>Do problema de Engenharia ao modelo matemático</h2>
+            <div class="problem-box">
+                <div class="problem-icon">🏗️</div>
+                <div>
+                    <h3>Problema</h3>
+                    <p>
+                        Determinar os materiais necessários a partir das áreas
+                        de alvenaria e dos respectivos consumos por metro quadrado.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-grid objectives">
+                <div class="info-box"><span class="number">01</span><h3>Modelar</h3>
+                    <p>Representar matematicamente as relações entre áreas de alvenaria e consumo de materiais.</p>
+                </div>
+                <div class="info-box"><span class="number">02</span><h3>Aplicar</h3>
+                    <p>Utilizar matrizes, sistemas lineares, transformações lineares e combinações lineares.</p>
+                </div>
+                <div class="info-box"><span class="number">03</span><h3>Validar</h3>
+                    <p>Verificar o modelo por meio de exemplos numéricos.</p>
+                </div>
+                <div class="info-box"><span class="number">04</span><h3>Implementar</h3>
+                    <p>Executar o mesmo modelo em JavaScript e em Python + NumPy no navegador.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card callout-card">
+            <span class="section-label">MODELO COMPUTACIONAL</span>
+            <h2>Duas implementações do mesmo modelo</h2>
+            <p>
+                O site apresenta duas formas de executar o produto matricial
+                <strong>M = A · X</strong>: uma calculadora em JavaScript e uma
+                implementação em Python utilizando NumPy por meio do Pyodide.
+            </p>
+            <div class="three-actions">
+                <a class="link-btn" href="modelo.html">📐 Ver modelo</a>
+                <a class="link-btn" href="calculadora.html">🧮 Executar JavaScript</a>
+                <a class="link-btn" href="python.html">🐍 Executar Python</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>VI JAPEX 2026</strong></p>
+        <p>Universidade do Estado da Bahia – UNEB</p>
+        <p>Departamento de Ciências Exatas e da Terra – DCET I</p>
+        <p class="footer-small">Salvador – BA · 2026</p>
+    </footer>
+</div>
+</body>
+</html>

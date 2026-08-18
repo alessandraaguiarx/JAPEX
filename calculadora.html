@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora matricial em JavaScript - VI JAPEX 2026.">
+    <title>Calculadora | VI JAPEX 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay">
+    <nav>
+        <div class="logo">VI JAPEX 2026</div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modelo.html">Modelo Matemático</a></li>
+            <li><a class="active" href="calculadora.html">Calculadora</a></li>
+            <li><a href="python.html">🐍 Python — Teste</a></li>
+            <li><a href="github.html">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <span class="event-tag">08 · APLICAÇÃO COMPUTACIONAL</span>
+        <h1>Calculadora Matricial em JavaScript</h1>
+        <p>Execute o modelo M = A · X diretamente no navegador.</p>
+    </header>
+
+    <main class="container">
+        <section class="card calculator-card">
+            <span class="section-label">IMPLEMENTAÇÃO 01 · JAVASCRIPT</span>
+            <h2>Calculadora Matricial Interativa</h2>
+            <p>
+                Insira os consumos por m² e as áreas de alvenaria para realizar
+                a multiplicação matricial. O cálculo acontece localmente no navegador.
+            </p>
+
+            <div class="model-mini">
+                <strong>M = A · X</strong>
+                <span>JavaScript · sem instalação · execução imediata</span>
+            </div>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="argamassaX">Consumo Argamassa X (kg/m²)</label>
+                    <input type="number" id="argamassaX" step="any" value="5" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="argamassaY">Consumo Argamassa Y (kg/m²)</label>
+                    <input type="number" id="argamassaY" step="any" value="3" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="graute">Consumo de Graute (kg/m²)</label>
+                    <input type="number" id="graute" step="any" value="2" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="areaConvencional">Área convencional (m²)</label>
+                    <input type="number" id="areaConvencional" step="any" value="10" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="areaEstrutural">Área estrutural (m²)</label>
+                    <input type="number" id="areaEstrutural" step="any" value="20" min="0">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-calc" id="btnCalcular">Calcular quantitativos</button>
+
+            <div id="resultado" class="result-box" aria-live="polite">
+                <h3>Resultado — Vetor M</h3>
+                <div class="result-grid">
+                    <div class="result-card"><strong id="resultadoArgamassaX">0,00 kg</strong><span>Argamassa X</span></div>
+                    <div class="result-card"><strong id="resultadoArgamassaY">0,00 kg</strong><span>Argamassa Y</span></div>
+                    <div class="result-card"><strong id="resultadoGraute">0,00 kg</strong><span>Graute</span></div>
+                </div>
+                <div class="calculation-note" id="calculoRealizado"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">COMPARAÇÃO</span>
+            <h2>Agora execute o mesmo modelo em Python</h2>
+            <p>
+                A matriz e o vetor utilizados aqui são os mesmos da implementação
+                em Python + NumPy. A diferença está apenas na linguagem utilizada.
+            </p>
+            <a class="link-btn" href="python.html">🐍 Ir para Python — Teste</a>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>VI JAPEX 2026</strong></p>
+        <p>Universidade do Estado da Bahia – UNEB</p>
+        <p>Departamento de Ciências Exatas e da Terra – DCET I</p>
+        <p class="footer-small">Salvador – BA · 2026</p>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modelo matemático do projeto VI JAPEX 2026.">
+    <title>Modelo Matemático | VI JAPEX 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay">
+    <nav>
+        <div class="logo">VI JAPEX 2026</div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a class="active" href="modelo.html">Modelo Matemático</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="python.html">🐍 Python — Teste</a></li>
+            <li><a href="github.html">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <span class="event-tag">03 · MODELO MATEMÁTICO</span>
+        <h1>Da Álgebra Linear ao quantitativo de materiais</h1>
+        <p>Representação matricial, sistema linear, transformação linear e combinação linear.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <span class="section-label">REPRESENTAÇÃO MATRICIAL</span>
+            <h2>Modelo M = A · X</h2>
+            <p>
+                O modelo relaciona o vetor de áreas da obra à matriz de consumo
+                dos materiais, produzindo um vetor de quantitativos.
+            </p>
+
+            <div class="matrix-flow">
+                <div class="matrix-box">
+                    <span>Vetor de entrada</span>
+                    <div class="matrix">X = <span class="bracket">[</span><span>x<br>y</span><span class="bracket">]</span></div>
+                    <small>x = área convencional<br>y = área estrutural</small>
+                </div>
+                <div class="operator">×</div>
+                <div class="matrix-box">
+                    <span>Matriz de consumo</span>
+                    <div class="matrix">A = <span class="bracket">[</span><span>5 &nbsp; 0<br>0 &nbsp; 3<br>0 &nbsp; 2</span><span class="bracket">]</span></div>
+                    <small>Linhas = materiais<br>Colunas = tipos de alvenaria</small>
+                </div>
+                <div class="operator">=</div>
+                <div class="matrix-box result-matrix">
+                    <span>Vetor de saída</span>
+                    <div class="matrix">M = <span class="bracket">[</span><span>5x<br>3y<br>2y</span><span class="bracket">]</span></div>
+                    <small>Quantitativos dos materiais</small>
+                </div>
+            </div>
+            <div class="formula">M = A · X</div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">04 · SISTEMA LINEAR</span>
+            <h2>O modelo como sistema de equações</h2>
+            <p>
+                A mesma relação matricial pode ser interpretada como um sistema
+                linear que relaciona as áreas aos quantitativos dos materiais.
+            </p>
+            <div class="equation-system">
+                <div>5x + 0y = Argamassa X</div>
+                <div>0x + 3y = Argamassa Y</div>
+                <div>0x + 2y = Graute</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">05 · TRANSFORMAÇÃO LINEAR</span>
+            <h2>Do espaço das áreas ao espaço dos materiais</h2>
+            <div class="transformation">
+                <div class="space-box"><strong>R²</strong><p>Vetor das áreas</p><span>(x, y)</span></div>
+                <div class="arrow">→</div>
+                <div class="space-box matrix-space"><strong>A</strong><p>Matriz de consumo</p><span>T(X) = A · X</span></div>
+                <div class="arrow">→</div>
+                <div class="space-box"><strong>R³</strong><p>Vetor dos materiais</p><span>(5x, 3y, 2y)</span></div>
+            </div>
+            <div class="highlight-text">A transformação pode ser representada por: <strong>T : R² → R³</strong></div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">06 · ESPAÇO VETORIAL E COMBINAÇÃO LINEAR</span>
+            <h2>Interpretação geométrica e algébrica</h2>
+            <div class="two-columns math-columns">
+                <div>
+                    <h3>Espaço vetorial</h3>
+                    <p>O vetor de entrada pertence a R²:</p>
+                    <div class="small-formula">X = [ x ; y ]</div>
+                    <p>O vetor de materiais pertence a R³:</p>
+                    <div class="small-formula">M = [ 5x ; 3y ; 2y ]</div>
+                </div>
+                <div>
+                    <h3>Combinação linear</h3>
+                    <p>As colunas da matriz podem ser interpretadas como vetores associados aos tipos de alvenaria:</p>
+                    <div class="small-formula">V₁ = [5 ; 0 ; 0]</div>
+                    <div class="small-formula">V₂ = [0 ; 3 ; 2]</div>
+                    <div class="formula-small">M = xV₁ + yV₂</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">07 · EXEMPLO NUMÉRICO</span>
+            <h2>Validação do modelo</h2>
+            <p>Para demonstrar a aplicação da transformação linear, considere:</p>
+            <div class="example-inputs">
+                <div><strong>x = 10 m²</strong><span>Alvenaria convencional</span></div>
+                <div><strong>y = 20 m²</strong><span>Alvenaria estrutural</span></div>
+            </div>
+            <div class="calculation">
+                <div class="calculation-title">T(10,20) = A · X</div>
+                <div class="formula-large">
+                    <span>[ 5 &nbsp; 0 ]<br>[ 0 &nbsp; 3 ]<br>[ 0 &nbsp; 2 ]</span>
+                    ×
+                    <span>[ 10 ]<br>[ 20 ]</span>
+                    =
+                    <span>[ 50 ]<br>[ 60 ]<br>[ 40 ]</span>
+                </div>
+            </div>
+            <div class="result-grid">
+                <div class="result-card"><strong>50 kg</strong><span>Argamassa X</span></div>
+                <div class="result-card"><strong>60 kg</strong><span>Argamassa Y</span></div>
+                <div class="result-card"><strong>40 kg</strong><span>Graute</span></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">08 · RESULTADOS</span>
+            <h2>Aplicação e interpretação</h2>
+            <div class="result-flow">
+                <div><span>ENTRADA</span><strong>Áreas</strong><small>Alvenaria convencional<br>Alvenaria estrutural</small></div>
+                <div class="flow-arrow">→</div>
+                <div><span>PROCESSAMENTO</span><strong>M = A · X</strong><small>Transformação linear</small></div>
+                <div class="flow-arrow">→</div>
+                <div><span>SAÍDA</span><strong>Materiais</strong><small>Argamassa X<br>Argamassa Y<br>Graute</small></div>
+            </div>
+            <p class="result-description">
+                A estrutura matricial permite alterar os parâmetros de entrada
+                e obter automaticamente os respectivos quantitativos, mantendo
+                a mesma lógica matemática.
+            </p>
+        </section>
+
+        <section class="card">
+            <span class="section-label">09 · REFERÊNCIAS</span>
+            <h2>Referências essenciais</h2>
+            <div class="references">
+                <p><strong>ANTON, Howard; RORRES, Chris.</strong> <em>Álgebra Linear com Aplicações.</em> Porto Alegre: Bookman.</p>
+                <p><strong>LAY, David C.</strong> <em>Álgebra Linear e suas Aplicações.</em> Rio de Janeiro: LTC.</p>
+            </div>
+        </section>
+
+        <section class="card callout-card">
+            <h2>Próximo passo</h2>
+            <p>Teste o mesmo modelo primeiro em JavaScript e depois em Python + NumPy.</p>
+            <div class="three-actions">
+                <a class="link-btn" href="calculadora.html">🧮 JavaScript</a>
+                <a class="link-btn" href="python.html">🐍 Python + NumPy</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>VI JAPEX 2026</strong></p>
+        <p>Universidade do Estado da Bahia – UNEB</p>
+        <p>Departamento de Ciências Exatas e da Terra – DCET I</p>
+        <p class="footer-small">Salvador – BA · 2026</p>
+    </footer>
+</div>
+</body>
+</html>

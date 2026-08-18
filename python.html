@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Execução interativa do modelo matricial em Python + NumPy - VI JAPEX 2026.">
+    <title>Python | VI JAPEX 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module">
+        import { loadPyodide } from "https://cdn.jsdelivr.net/npm/pyodide@0.28.2/pyodide.mjs";
+
+        window.pyodideReady = false;
+        window.pyodide = null;
+
+        async function iniciarPyodide() {
+            const status = document.getElementById("pythonStatus");
+            const terminal = document.getElementById("pythonTerminal");
+
+            try {
+                status.textContent = "Carregando Python + NumPy...";
+                status.className = "python-status loading";
+
+                window.pyodide = await loadPyodide({
+                    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/"
+                });
+
+                await window.pyodide.loadPackage("numpy");
+
+                window.pyodideReady = true;
+                status.textContent = "Python + NumPy carregados. Pronto para executar.";
+                status.className = "python-status ready";
+
+                terminal.classList.add("ready");
+                window.iniciarTerminalPython();
+
+            } catch (error) {
+                console.error(error);
+                status.textContent = "Não foi possível carregar o Python. Verifique a conexão com a internet.";
+                status.className = "python-status error";
+            }
+        }
+
+        window.addEventListener("DOMContentLoaded", iniciarPyodide);
+    </script>
+</head>
+<body>
+<div class="overlay">
+    <nav>
+        <div class="logo">VI JAPEX 2026</div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modelo.html">Modelo Matemático</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a class="active" href="python.html">🐍 Python</a></li>
+            <li><a href="github.html">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <span class="event-tag">09 · IMPLEMENTAÇÃO EM PYTHON</span>
+        <h1>Execução do programa em Python</h1>
+        <p>Uma simulação da experiência de executar o programa no terminal do VS Code.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card python-card">
+            <span class="section-label">PYTHON + NUMPY</span>
+            <h2>Programa interativo</h2>
+            <p>
+                Aqui o usuário não precisa preencher um formulário. O programa
+                apresenta cada <strong>input()</strong> na sequência, como acontece
+                no terminal do VS Code, e solicita os dados um por vez.
+            </p>
+
+            <div id="pythonStatus" class="python-status loading">
+                Inicializando Python...
+            </div>
+
+            <div class="terminal-window" id="pythonTerminal">
+                <div class="terminal-bar">
+                    <span class="terminal-title">Python — Terminal</span>
+                    <span class="terminal-state" id="terminalState">aguardando</span>
+                </div>
+
+                <div class="terminal-output" id="terminalOutput" aria-live="polite">
+                    Carregando ambiente Python...
+                </div>
+
+                <div class="terminal-input-line" id="terminalInputLine" hidden>
+                    <span class="terminal-prompt">&gt;&gt;&gt;</span>
+                    <input
+                        type="text"
+                        id="terminalInput"
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-label="Entrada do programa Python"
+                        disabled
+                    >
+                    <button type="button" id="terminalEnter" disabled>Enter</button>
+                </div>
+            </div>
+
+            <div class="terminal-actions">
+                <button type="button" class="btn btn-calc" id="btnNovoPython" disabled>
+                    ↻ Novo cálculo
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <span class="section-label">CÓDIGO PYTHON</span>
+            <h2>Código executado</h2>
+            <p>
+                Este é o código Python utilizado pelo programa. Observe que as
+                entradas são feitas com <strong>input()</strong>, exatamente como
+                em uma execução convencional no VS Code.
+            </p>
+
+            <div class="code-preview">
+<pre><code>import numpy as np
+
+print("=== CÁLCULO DE QUANTITATIVO DE MATERIAIS ===\n")
+
+# Entrada de dados (consumo por m²)
+argamassa_x = float(input("Digite o consumo de ARGAMASSA X (kg/m²) para alvenaria convencional: "))
+argamassa_y = float(input("Digite o consumo de ARGAMASSA Y (kg/m²) para alvenaria estrutural: "))
+graute = float(input("Digite o consumo de GRAUTE (kg/m²) para alvenaria estrutural: "))
+
+print("\n--- Agora informe a área da obra ---")
+
+# Entrada das áreas
+x = float(input("Digite a área de alvenaria CONVENCIONAL (m²): "))
+y = float(input("Digite a área de alvenaria ESTRUTURAL (m²): "))
+
+# Montando matriz de consumo
+A = np.array([
+    [argamassa_x, 0],
+    [0, argamassa_y],
+    [0, graute]
+])
+
+# Vetor da obra
+X = np.array([x, y])
+
+# Cálculo
+resultado = A.dot(X)
+
+# Saída
+print("\n=== RESULTADO FINAL ===\n")
+
+print(f"Será necessário {resultado[0]:.2f} kg de argamassa X (alvenaria convencional)")
+print(f"Será necessário {resultado[1]:.2f} kg de argamassa Y (alvenaria estrutural)")
+print(f"Será necessário {resultado[2]:.2f} kg de graute (alvenaria estrutural)")</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>VI JAPEX 2026</strong></p>
+        <p>Universidade do Estado da Bahia – UNEB</p>
+        <p>Departamento de Ciências Exatas e da Terra – DCET I</p>
+        <p class="footer-small">Salvador – BA · 2026</p>
+    </footer>
+</div>
+<script src="python.js"></script>
+</body>
+</html>
